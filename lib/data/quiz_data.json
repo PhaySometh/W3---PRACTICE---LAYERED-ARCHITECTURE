@@ -1,1 +1,47 @@
-{"id":"01b49b10-86e5-4224-9a1c-499f4ffd2615","questions":[{"id":"31550420-ab1e-4fc0-9816-129b8c797f09","title":"Capital of Cambodia?","choices":["Phnom Penh","Tokyo","Duma"],"goodChoice":"Phnom Penh","points":10},{"id":"87cc04d9-3854-407e-8d82-628a1337bd0f","title":"2 + 2 = ?","choices":["2","4","67"],"goodChoice":"4","points":50}],"submissions":[{"playerName":"Someth","answers":[{"id":"6398710d-89df-4e39-9980-c03a429f40c9","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Tokyo"},{"id":"4676cb21-22c5-4370-b5f9-dac12087a719","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"4"}]},{"playerName":"juruu","answers":[{"id":"a7c2cee6-5c52-454e-9277-3dab125fb562","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Phnom Penh"},{"id":"1e00a2cc-d1aa-4473-a09c-9695dda7ea6c","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"4"}]},{"playerName":"Sak","answers":[{"id":"772c3c7f-9a90-459c-8cf8-433959f78359","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Duma"},{"id":"4854a4b2-2bf7-44cb-aff4-b5368889d1ac","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"4"}]},{"playerName":"Pich","answers":[{"id":"eee251ce-beb4-4914-9821-7636fe915efd","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Tokyo"},{"id":"a183dc4a-fb1b-4e5b-8c47-8c02f9756654","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"67"}]},{"playerName":"haha","answers":[{"id":"bfebe5ba-e6ce-4bf3-88d1-549f27ac5dbb","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"ZZ"}]},{"playerName":"Nuka","answers":[]},{"playerName":"SMEAN","answers":[{"id":"98c7668b-8d50-4a83-bcbe-3dd0921d0cdf","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Phnom Penh"},{"id":"d088e458-dae6-4126-b086-0f99c75b9941","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"3"}]},{"playerName":"HealthWhisper","answers":[{"id":"7f709b41-eda7-4ee3-a65c-b63eff54ac7e","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Phnom Penh"},{"id":"3ca210e2-63cf-4a63-8399-96b1813b0fe9","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"4"}]},{"playerName":"theany","answers":[{"id":"da21f374-5309-4371-ab40-adff84fc76a0","questionId":"31550420-ab1e-4fc0-9816-129b8c797f09","answerChoice":"Tokyo"},{"id":"1af0551c-2a03-426b-86e6-46ecd38f79f1","questionId":"87cc04d9-3854-407e-8d82-628a1337bd0f","answerChoice":"4"}]}]}
+{
+  "id": "3ae50579-ebdc-4fc7-8319-8a7741ca64da",
+  "questions": [
+    {
+      "id": "f79b98c4-14df-4512-be91-d45617e0d300",
+      "title": "Capital of Cambodia?",
+      "choices": ["Phnom Penh", "Paris Saint Germain", "Ching Chong"],
+      "goodChoice": "Phnom Penh",
+      "points": 10
+    },
+    {
+      "id": "f099bd7c-690c-48e8-aa1e-338710fa747e",
+      "title": "2 + 2 = ?",
+      "choices": ["2", "4", "6", "8"],
+      "goodChoice": "4",
+      "points": 50
+    }
+  ],
+  "submissions": [
+    {
+      "playerName": "Hello haha",
+      "answers": [
+        {
+          "id": "cb7a6093-2a50-41dd-a127-2f9e0ec7ad9e",
+          "questionId": "f79b98c4-14df-4512-be91-d45617e0d300",
+          "answerChoice": "123"
+        },
+        {
+          "id": "c0d82dc5-d7ae-49a6-af27-ea5c67209dc1",
+          "questionId": "9a672341-73d3-482b-8806-7f3d8933565c",
+          "answerChoice": "df"
+        }
+      ]
+    },
+    {
+      "playerName": "dsfs",
+      "answers": [
+        {
+          "id": "db95ec34-a340-4b44-9f71-a539c2a93e2b",
+          "questionId": "f79b98c4-14df-4512-be91-d45617e0d300",
+          "answerChoice": "df"
+        }
+      ]
+    },
+    { "playerName": "sdf", "answers": [] }
+  ]
+}
