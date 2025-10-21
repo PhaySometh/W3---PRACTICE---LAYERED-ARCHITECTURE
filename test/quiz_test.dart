@@ -12,11 +12,15 @@ main() {
     Quiz quiz = Quiz(questions: [q1, q2]);
     Player player = Player(name: "Test Player");
 
-    player.addAnswer(Answer(question: q1, answerChoice: "2"));
-    player.addAnswer(Answer(question: q2, answerChoice: "6"));
+    List<Answer> answers = [
+      Answer(questionId: q1.id, answerChoice: "2"),
+      Answer(questionId: q2.id, answerChoice: "6"),
+    ];
+    Submission submission = Submission(player: player, answers: answers);
+    quiz.addSubmission(submission);
 
-    expect(player.getScoreInPercentage(quiz.questions), equals(100));
-    expect(player.getScoreInPoints(), equals(30));
+    expect(submission.getScoreInPercentage(quiz), equals(100));
+    expect(submission.getScoreInPoints(quiz), equals(30));
   });
 
   // Test 2: Multiple players with different scores
@@ -30,21 +34,31 @@ main() {
 
     // Player 1: All correct
     Player alice = Player(name: "Alice");
-    alice.addAnswer(Answer(question: q1, answerChoice: "2"));
-    alice.addAnswer(Answer(question: q2, answerChoice: "6"));
-    quiz.addPlayer(alice);
+    Submission aliceSubmission = Submission(
+      player: alice,
+      answers: [
+        Answer(questionId: q1.id, answerChoice: "2"),
+        Answer(questionId: q2.id, answerChoice: "6"),
+      ],
+    );
+    quiz.addSubmission(aliceSubmission);
 
     // Player 2: One correct
     Player bob = Player(name: "Bob");
-    bob.addAnswer(Answer(question: q1, answerChoice: "2"));
-    bob.addAnswer(Answer(question: q2, answerChoice: "1"));
-    quiz.addPlayer(bob);
+    Submission bobSubmission = Submission(
+      player: bob,
+      answers: [
+        Answer(questionId: q1.id, answerChoice: "2"),
+        Answer(questionId: q2.id, answerChoice: "1"),
+      ],
+    );
+    quiz.addSubmission(bobSubmission);
 
-    expect(alice.getScoreInPercentage(quiz.questions), equals(100));
-    expect(alice.getScoreInPoints(), equals(30));
-    expect(bob.getScoreInPercentage(quiz.questions), equals(50));
-    expect(bob.getScoreInPoints(), equals(10));
-    expect(quiz.players.length, equals(2));
+    expect(aliceSubmission.getScoreInPercentage(quiz), equals(100));
+    expect(aliceSubmission.getScoreInPoints(quiz), equals(30));
+    expect(bobSubmission.getScoreInPercentage(quiz), equals(50));
+    expect(bobSubmission.getScoreInPoints(quiz), equals(10));
+    expect(quiz.submissions.length, equals(2));
   });
 
   // Test 3: Player replays - score overwritten
@@ -53,20 +67,25 @@ main() {
         title: "4-2", choices: ["1", "2", "3"], goodChoice: "2", points: 10);
 
     Quiz quiz = Quiz(questions: [q1]);
+    Player alice = Player(name: "Alice");
 
     // First attempt: Wrong
-    Player alice1 = Player(name: "Alice");
-    alice1.addAnswer(Answer(question: q1, answerChoice: "1"));
-    quiz.addPlayer(alice1);
+    Submission firstAttempt = Submission(
+      player: alice,
+      answers: [Answer(questionId: q1.id, answerChoice: "1")],
+    );
+    quiz.addSubmission(firstAttempt);
 
     // Second attempt: Correct
-    Player alice2 = Player(name: "Alice");
-    alice2.addAnswer(Answer(question: q1, answerChoice: "2"));
-    quiz.addPlayer(alice2);
+    Submission secondAttempt = Submission(
+      player: alice,
+      answers: [Answer(questionId: q1.id, answerChoice: "2")],
+    );
+    quiz.addSubmission(secondAttempt);
 
-    expect(quiz.players.length, equals(1));
-    expect(quiz.players[0].name, equals("Alice"));
-    expect(quiz.players[0].getScoreInPoints(), equals(10));
+    expect(quiz.submissions.length, equals(1));
+    expect(quiz.submissions[0].player.name, equals("Alice"));
+    expect(quiz.submissions[0].getScoreInPoints(quiz), equals(10));
   });
 
   // Test 4: Player with all wrong answers - 0%
@@ -77,9 +96,12 @@ main() {
     Quiz quiz = Quiz(questions: [q1]);
     Player player = Player(name: "Charlie");
 
-    player.addAnswer(Answer(question: q1, answerChoice: "1")); // Wrong
+    Submission submission = Submission(
+      player: player,
+      answers: [Answer(questionId: q1.id, answerChoice: "1")],
+    );
 
-    expect(player.getScoreInPercentage(quiz.questions), equals(0));
-    expect(player.getScoreInPoints(), equals(0));
+    expect(submission.getScoreInPercentage(quiz), equals(0));
+    expect(submission.getScoreInPoints(quiz), equals(0));
   });
 }
